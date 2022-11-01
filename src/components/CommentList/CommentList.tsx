@@ -1,13 +1,15 @@
 import React from 'react';
 import { CommentInfo } from '../CommentInfo/CommentInfo';
-import { commentType } from '../../types/commentType';
+import { CommentType } from '../../types/CommentType';
 
 type Props = {
-  comments: commentType[] | undefined,
+  comments: CommentType[] | undefined,
 };
 
-export const CommentList: React.FC<Props> = (comments) => (
+export const CommentList: React.FC<Props> = ({ comments = [] }) => (
   <div className="CommentList">
-    {comments.map(oneComment => <CommentInfo key={oneComment.id} {...oneComment} />)}
+    {comments.length === 0
+      ? <p>There are no comments yet</p>
+      : comments.map(oneComment => <CommentInfo key={oneComment.id} comment={oneComment} />)}
   </div>
 );

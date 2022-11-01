@@ -1,4 +1,4 @@
-export interface userType {
+export interface UserType {
   id: number,
   name: string,
   username: string,
@@ -8,9 +8,16 @@ export interface userType {
     suite: string,
     city: string,
     zipcode: string,
-    geo: object,
+    geo: {
+      lat: string,
+      lng: string,
+    },
   },
   phone?: string,
   website?: string,
-  company?: object,
+  company?: {
+    name: string,
+    catchPhrase: string,
+    bs: string,
+  },
 }

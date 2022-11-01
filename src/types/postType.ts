@@ -1,11 +1,11 @@
-import { userType } from './userType';
-import { commentType } from './commentType';
+import { UserType } from './UserType';
+import { CommentType } from './CommentType';
 
-export interface postType {
+export interface PostType {
   userId: number,
   id: number,
   title: string,
   body: string,
-  userOfPost: userType | undefined,
-  commentsOfPost: commentType[] | undefined,
+  userOfPost: UserType | undefined,
+  commentsOfPost: CommentType[] | undefined,
 }

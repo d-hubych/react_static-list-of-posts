@@ -1,18 +1,18 @@
 import React from 'react';
 import { CommentList } from '../CommentList/CommentList';
-import { postType } from '../../types/postType';
+import { PostType } from '../../types/PostType';
 
 type Props = {
-  post: postType,
+  post: PostType,
 };
 
-export const PostInfo: React.FC<Props> = (post) => {
+export const PostInfo: React.FC<Props> = ({ post }) => {
   const {
     body,
     commentsOfPost,
     title,
     userOfPost,
-  } = post.post;
+  } = post;
 
   return (
     <div className="PostInfo">
@@ -31,7 +31,7 @@ export const PostInfo: React.FC<Props> = (post) => {
       <p className="PostInfo__body">
         {body}
       </p>
-      <CommentList {...commentsOfPost} />
+      <CommentList comments={commentsOfPost} />
     </div>
   );
 };
